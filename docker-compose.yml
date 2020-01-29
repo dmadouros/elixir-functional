@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  iex:
+    build: .
+    volumes:
+      - .:/usr/src/app
