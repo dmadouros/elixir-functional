@@ -5,3 +5,6 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
+
+  irb:
+    image: ruby:2.5.7
