@@ -8,3 +8,5 @@ erl_crash.dump
 *.beam
 /config/*.secret.exs
 .elixir_ls/
+
+/ch_02/task_list.md
