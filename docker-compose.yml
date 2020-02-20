@@ -5,6 +5,14 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
+    command: ["iex"]
+  bash:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: ["bash"]
+
 
   irb:
     image: ruby:2.5.7
+    command: ["irb"]
