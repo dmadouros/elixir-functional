@@ -1,17 +1,18 @@
 defmodule Shop do
   def checkout() do
-    try do
-      {quantity, _} = ask_number("Quantity?")
-      {price, _} = ask_number("Price?")
-      quantity * price
-    rescue
-      MatchError -> "It's not a number"
-    end
+    result =
+      with {quantity, _} <- ask_number("Quantity?"),
+           {price, _} <- ask_number("Price?") do
+        quantity * price
+      else
+        :error ->
+          IO.puts("It's not a number")
+      end
   end
 
   defp ask_number(message) do
-    message <> "\n"
-      |> IO.gets
-      |> Integer.parse
+    (message <> "\n")
+    |> IO.gets()
+    |> Integer.parse()
   end
 end
